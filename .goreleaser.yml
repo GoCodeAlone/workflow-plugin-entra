@@ -11,7 +11,7 @@ builds:
   - id: plugin
     main: ./cmd/workflow-plugin-entra
     binary: workflow-plugin-entra
-    env: [CGO_ENABLED=0]
+    env: [CGO_ENABLED=0, GOWORK=off]
     goos: [linux, darwin]
     goarch: [amd64, arm64]
     ldflags: ["-s", "-w", "-X github.com/GoCodeAlone/workflow-plugin-entra/internal.Version={{.Version}}"]
