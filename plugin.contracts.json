@@ -1,0 +1,155 @@
+{
+  "version": "1",
+  "contracts": [
+    {
+      "kind": "module",
+      "type": "entra.provider",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.ProviderConfig"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_auth_provider_describe",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.AuthProviderDescribeConfig",
+      "input": "workflow.plugins.entra.v1.AuthProviderDescribeInput",
+      "output": "workflow.plugins.entra.v1.AuthProviderDescribeOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_user_create",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_user_get",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_user_list",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_user_update",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_user_delete",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_group_create",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_group_get",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_group_list",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_group_add_member",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_group_remove_member",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_application_create",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_application_get",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_application_list",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_application_update",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_application_delete",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_directory_role_list",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    },
+    {
+      "kind": "step",
+      "type": "step.entra_service_principal_list",
+      "mode": "strict",
+      "config": "workflow.plugins.entra.v1.EntraStepConfig",
+      "input": "workflow.plugins.entra.v1.EntraStepInput",
+      "output": "workflow.plugins.entra.v1.EntraStepOutput"
+    }
+  ]
+}

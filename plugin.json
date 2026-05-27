@@ -1,0 +1,61 @@
+{
+  "name": "workflow-plugin-entra",
+  "version": "0.1.0",
+  "description": "Microsoft Entra ID management provider plugin",
+  "author": "GoCodeAlone",
+  "license": "MIT",
+  "type": "external",
+  "tier": "community",
+  "private": false,
+  "minEngineVersion": "0.64.0",
+  "keywords": ["entra", "microsoft-graph", "identity", "iam", "sso", "oidc"],
+  "homepage": "https://github.com/GoCodeAlone/workflow-plugin-entra",
+  "repository": "https://github.com/GoCodeAlone/workflow-plugin-entra",
+  "capabilities": {
+    "configProvider": false,
+    "moduleTypes": ["entra.provider"],
+    "stepTypes": [
+      "step.entra_auth_provider_describe",
+      "step.entra_user_create",
+      "step.entra_user_get",
+      "step.entra_user_list",
+      "step.entra_user_update",
+      "step.entra_user_delete",
+      "step.entra_group_create",
+      "step.entra_group_get",
+      "step.entra_group_list",
+      "step.entra_group_add_member",
+      "step.entra_group_remove_member",
+      "step.entra_application_create",
+      "step.entra_application_get",
+      "step.entra_application_list",
+      "step.entra_application_update",
+      "step.entra_application_delete",
+      "step.entra_directory_role_list",
+      "step.entra_service_principal_list"
+    ],
+    "triggerTypes": []
+  },
+  "downloads": [
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/GoCodeAlone/workflow-plugin-entra/releases/download/v0.1.0/workflow-plugin-entra-linux-amd64.tar.gz"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/GoCodeAlone/workflow-plugin-entra/releases/download/v0.1.0/workflow-plugin-entra-linux-arm64.tar.gz"
+    },
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/GoCodeAlone/workflow-plugin-entra/releases/download/v0.1.0/workflow-plugin-entra-darwin-amd64.tar.gz"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/GoCodeAlone/workflow-plugin-entra/releases/download/v0.1.0/workflow-plugin-entra-darwin-arm64.tar.gz"
+    }
+  ]
+}
