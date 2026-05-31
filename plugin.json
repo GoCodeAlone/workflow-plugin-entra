@@ -8,12 +8,41 @@
   "tier": "community",
   "private": false,
   "minEngineVersion": "0.64.0",
-  "keywords": ["entra", "microsoft-graph", "identity", "iam", "sso", "oidc"],
+  "required_secrets": [
+    {
+      "name": "ENTRA_TENANT_ID",
+      "sensitive": false,
+      "description": "Microsoft Entra ID tenant ID. Referenced as ${ENTRA_TENANT_ID} in the provider tenant_id config.",
+      "prompt": "Entra tenant ID"
+    },
+    {
+      "name": "ENTRA_CLIENT_ID",
+      "sensitive": false,
+      "description": "Entra app client ID. Referenced as ${ENTRA_CLIENT_ID} in client_id.",
+      "prompt": "Entra client ID"
+    },
+    {
+      "name": "ENTRA_CLIENT_SECRET",
+      "sensitive": true,
+      "description": "Entra app client secret. Referenced as ${ENTRA_CLIENT_SECRET} in client_secret.",
+      "prompt": "Entra client secret"
+    }
+  ],
+  "keywords": [
+    "entra",
+    "microsoft-graph",
+    "identity",
+    "iam",
+    "sso",
+    "oidc"
+  ],
   "homepage": "https://github.com/GoCodeAlone/workflow-plugin-entra",
   "repository": "https://github.com/GoCodeAlone/workflow-plugin-entra",
   "capabilities": {
     "configProvider": false,
-    "moduleTypes": ["entra.provider"],
+    "moduleTypes": [
+      "entra.provider"
+    ],
     "stepTypes": [
       "step.entra_auth_provider_describe",
       "step.entra_user_create",
