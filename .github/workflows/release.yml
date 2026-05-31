@@ -110,3 +110,29 @@ jobs:
                 draft: false,
               });
             }
+
+  sync-registry:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [publish-release]
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check registry token
+        id: registry-token
+        env:
+          REGISTRY_PAT: ${{ secrets.REGISTRY_PAT }}
+        run: |
+          if [ -n "$REGISTRY_PAT" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Notify workflow-registry
+        if: steps.registry-token.outputs.present == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.REGISTRY_PAT }}
+          repository: GoCodeAlone/workflow-registry
+          event-type: plugin-release
+          client-payload: >-
+            {"plugin": "entra", "tag": "${{ github.ref_name }}"}
+        continue-on-error: true
