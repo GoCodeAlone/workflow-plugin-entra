@@ -111,28 +111,23 @@ jobs:
               });
             }
 
-  sync-registry:
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: [publish-release]
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check registry token
-        id: registry-token
-        env:
-          REGISTRY_PAT: ${{ secrets.REGISTRY_PAT }}
-        run: |
-          if [ -n "$REGISTRY_PAT" ]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          fi
 
-      - name: Notify workflow-registry
-        if: steps.registry-token.outputs.present == 'true'
-        uses: peter-evans/repository-dispatch@v3
+  notify-workflow-registry:
+    name: Notify workflow-registry
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: publish-release
+    if: >-
+      !github.event.deleted
+      && !contains(github.ref_name, '-')
+      && github.repository == 'GoCodeAlone/workflow-plugin-entra'
+    steps:
+      - name: Trigger registry manifest sync
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697  # v4
         with:
-          token: ${{ secrets.REGISTRY_PAT }}
+          token: ${{ secrets.repo_dispatch_token }}
           repository: GoCodeAlone/workflow-registry
           event-type: plugin-release
-          client-payload: >-
+          client-payload: |-
             {"plugin": "entra", "tag": "${{ github.ref_name }}"}
-        continue-on-error: true
